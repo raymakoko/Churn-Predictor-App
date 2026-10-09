@@ -145,7 +145,7 @@ if st.button("🔮Predict Churn", use_container_width=True):
                  "a higher likelihood of churning"
             
         )
-        st.metric("Model Probability, f"{churning_probability:.1f}%**")
+        st.metric("Model Probability", f"{churning_probability:.1f}%**")
 
 
     else:
@@ -155,4 +155,4 @@ if st.button("🔮Predict Churn", use_container_width=True):
                  "a lower likelihood of churning"
             
         )
-        st.metric("Model Probability, f"{churning_probability:.1f}%**")
+        st.metric("Model Probability", f"{churning_probability:.1f}%**")
