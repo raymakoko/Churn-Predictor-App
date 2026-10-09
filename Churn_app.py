@@ -127,26 +127,32 @@ input_final = input_final[feature_names]
 
 # Prediction
 st.divider()
-if st.button("Predict Churn", use_container_width=True):
+if st.button("🔮Predict Churn", use_container_width=True):
     # Make prediction 
-    prediction = final_rf.predict(input_final)[0]
+    prediction = final_rf.predict(input_final)
 
     # Get Churn probability
-    probability = final_rf.predict_proba(input_final)[0][1]
+    probability = final_rf.predict_proba(input_final)
+    churning_probability = probability[0][1] * 100
+
+    st.subheader("📊 Prediction Results")
 
     # Display results
-    if prediction == 1:
-        st.error("The customer is likely to Churn.")
+    if prediction[0] == 1:
+        st.error("⚠️Higher likelihood for the customer to Churn.")
 
-        st.write(
-            f"Estimated probability of Churn:"
-            f"**{probability * 100:.2f}**"
+        st.write("Based on the information provided, the model predicts"
+                 "a higher likelihood of churning"
+            
         )
+        st.metric("Model Probability, f"**{churning_probability:.1f}%**")
+
 
     else:
-        st.success("The customer is likely to stay.")
+        st.success("✅Lower Likelihood of the customer to churn.")
 
-        st.write(
-            f"Estimate probability of churn:"
-            f"**{probability * 100:.2f}**"
+        st.write("Based on the information provided, the model predicts"
+                 "a lower likelihood of churning"
+            
         )
+        st.metric("Model Probability, f"**{churning_probability:.1f}%**")
