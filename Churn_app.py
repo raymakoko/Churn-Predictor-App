@@ -18,7 +18,7 @@ scaler = joblib.load("scaler.pkl")
 feature_names= joblib.load("feature_names.pkl")
 
 # Streamlit page settings
-st.set_page_config(page_title="Customer Churn Prediction", page_icon="📊", layout="centered")
+st.set_page_config(page_title="Customer Churn Prediction", page_icon="📊", layout="wide")
 
 # App title
 st.title("📊Customer Churn Prediction")
