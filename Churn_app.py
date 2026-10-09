@@ -31,16 +31,16 @@ st.subheader("👤 Demographics")
 # Create User input fields
 col1, col2  = st.columns(2)
 with col1:
-gender = st.selectbox("Gender", ["Female","Male"])
+  gender = st.selectbox("Gender", ["Female","Male"])
 
 with col2:
-senior_citizen = st.selectbox("Are you a seniour citizen?",["No", "Yes"])
+  senior_citizen = st.selectbox("Are you a seniour citizen?",["No", "Yes"])
 
 with col1:
-partner = st.selectbox("Do you have a partner?", ["No", "Yes"])
+  partner = st.selectbox("Do you have a partner?", ["No", "Yes"])
 
 with col2:
-dependents = st.selectbox("Do you have dependents?", ["No", "Yes"])
+  dependents = st.selectbox("Do you have dependents?", ["No", "Yes"])
 
 st.divider()
 # service inputs
@@ -49,31 +49,31 @@ st.subheader("📞 Services Subscribed")
 col1, col2, col3  = st.columns(3)
 
 with col1:
-phone_services =  st.selectbox("Do you have a phone service?",['No', 'Yes'])   
+  phone_services =  st.selectbox("Do you have a phone service?",['No', 'Yes'])   
 
 with col2:
-multiple_lines = st.selectbox("Do you have multiple lines?",['No phone service', 'No', 'Yes'])
+  multiple_lines = st.selectbox("Do you have multiple lines?",['No phone service', 'No', 'Yes'])
 
 with col3:
-internet_service = st.selectbox("Do you have internet service?",['DSL', 'Fiber optic', 'No'])
+  internet_service = st.selectbox("Do you have internet service?",['DSL', 'Fiber optic', 'No'])
 
 with col1:
-online_security = st.selectbox("Do you have online security?", ['No', 'Yes', 'No internet service'])
+  online_security = st.selectbox("Do you have online security?", ['No', 'Yes', 'No internet service'])
 
 with col2:
-online_backup = st.selectbox("Do you have online backup?", ['Yes', 'No', 'No internet service'])
+  online_backup = st.selectbox("Do you have online backup?", ['Yes', 'No', 'No internet service'])
 
 with col3:
-device_protection = st.selectbox("Do you have device protection?",['No', 'Yes', 'No internet service'])
+  device_protection = st.selectbox("Do you have device protection?",['No', 'Yes', 'No internet service'])
 
 with col1:
-tech_support = st.selectbox("Do you have tech support?", ['No', 'Yes', 'No internet service'])
+  tech_support = st.selectbox("Do you have tech support?", ['No', 'Yes', 'No internet service'])
 
 with col2:
-streaming_tv = st.selectbox("Do you have streaming tv services?",['No', 'Yes', 'No internet service'])
+  streaming_tv = st.selectbox("Do you have streaming tv services?",['No', 'Yes', 'No internet service'])
 
 with col3:
-streaming_movies = st.selectbox("Do you have streaming movies services?", ['No', 'Yes', 'No internet service'])
+  streaming_movies = st.selectbox("Do you have streaming movies services?", ['No', 'Yes', 'No internet service'])
 
 st.divider()
 # Contract and Billing information
@@ -82,23 +82,23 @@ st.subheader("💳 Account & Billing")
 col1, col2, col3  = st.columns(3)
 
 with col1:
-contract = st.selectbox("Which contract have you subscribeed to?",['Month-to-month', 'One year', 'Two year'])
+  contract = st.selectbox("Which contract have you subscribeed to?",['Month-to-month', 'One year', 'Two year'])
 
 with col2:
-paperless_billing = st.selectbox("Do you use paperless billing",["No", "Yes"] )
+  paperless_billing = st.selectbox("Do you use paperless billing",["No", "Yes"] )
 
 with col3:
-payment_method = st.selectbox("How do you pay for IBM?", ['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
+  payment_method = st.selectbox("How do you pay for IBM?", ['Electronic check', 'Mailed check', 'Bank transfer (automatic)',
        'Credit card (automatic)'])
 
 with col1:
-tenure = st.number_input("How many months have you been with IBM?", min_value=0, max_value=100, value=12)
+  tenure = st.number_input("How many months have you been with IBM?", min_value=0, max_value=100, value=12)
 
 with col2:
-monthly_charges = st.number_input("Monthly Charges", min_value=0.0, value=50.0)
+  monthly_charges = st.number_input("Monthly Charges", min_value=0.0, value=50.0)
 
 with col3:
-total_charges = st.number_input("Total Charges", min_value=0.0, value=600.0)
+  total_charges = st.number_input("Total Charges", min_value=0.0, value=600.0)
 
 # Create input data for the model
 input_data = pd.DataFrame({
