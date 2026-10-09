@@ -129,11 +129,11 @@ input_final = input_final[feature_names]
 st.divider()
 if st.button("🔮Predict Churn", use_container_width=True):
     # Make prediction 
-    prediction = final_rf.predict(input_final)
+    prediction = final_rf.predict(input_final)[0]
 
     # Get Churn probability
-    probability = final_rf.predict_proba(input_final)
-    churning_probability = probability[0][1] * 100
+    probability = final_rf.predict_proba(input_final)[0][1]
+    churning_probability = probability * 100
 
     st.subheader("📊 Prediction Results")
 
@@ -145,7 +145,7 @@ if st.button("🔮Predict Churn", use_container_width=True):
                  "a higher likelihood of churning"
             
         )
-        st.metric("Model Probability, f"**{churning_probability}%**")
+        st.metric("Model Probability, f"**{churning_probability:.1f}%**")
 
 
     else:
@@ -155,4 +155,4 @@ if st.button("🔮Predict Churn", use_container_width=True):
                  "a lower likelihood of churning"
             
         )
-        st.metric("Model Probability, f"**{churning_probability}%**")
+        st.metric("Model Probability, f"**{churning_probability:.1f}%**")
